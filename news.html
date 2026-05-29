@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>News — Kim Lab | 3D Genome and Disease Mechanisms, KAIST</title>
+<meta name="description" content="Latest news, talks, and milestones from the Kim Lab at KAIST.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600;6..72,700&family=Spline+Sans+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0a0e1a;--ink-2:#121829;--panel:#161d33;--panel-2:#1c2541;
+    --line:rgba(255,255,255,.10);--line-strong:rgba(255,255,255,.18);
+    --paper:#f4f1ea;--paper-dim:#cdc9bf;--mut:#8b93ab;
+    --accent:#e9b949;--accent-2:#5fd0c5;--accent-3:#ff6b5e;
+    --maxw:920px;--display:'Newsreader',Georgia,serif;--body:'Manrope',system-ui,sans-serif;--mono:'Spline Sans Mono',monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--ink);color:var(--paper);font-family:var(--body);font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--accent);color:var(--ink)}
+  body::before{content:"";position:fixed;inset:0;background:radial-gradient(900px 600px at 80% -5%,rgba(95,208,197,.09),transparent 60%),radial-gradient(800px 700px at 5% 110%,rgba(233,185,73,.07),transparent 55%);pointer-events:none;z-index:0}
+  .wrap{position:relative;z-index:1;max-width:var(--maxw);margin:0 auto;padding:0 28px}
+
+  nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(10,14,26,.72);border-bottom:1px solid var(--line)}
+  .nav-in{position:relative;max-width:1180px;margin:0 auto;padding:14px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+  .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:-.01em}
+  .brand .glyph{width:30px;height:30px;flex:none}
+  .brand b{font-size:15.5px}
+  .brand span{display:block;font-family:var(--mono);font-size:10.5px;color:var(--accent-2);letter-spacing:.12em;text-transform:uppercase;font-weight:500}
+  .nav-links{display:flex;gap:24px;align-items:center;font-size:14px;color:var(--mut);font-weight:600}
+  .nav-links a{transition:color .2s}
+  .nav-links a:hover{color:var(--paper)}
+  .nav-links a.active{color:var(--paper)}
+  .nav-cta{font-weight:700;font-size:13.5px;color:var(--ink);background:var(--accent);padding:9px 18px;border-radius:999px;transition:transform .2s,box-shadow .2s}
+  .nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(233,185,73,.3)}
+  .hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;width:42px;height:42px;background:none;border:1px solid var(--line-strong);border-radius:10px;cursor:pointer;padding:0}
+  .hamburger span{display:block;width:18px;height:2px;background:var(--paper);margin:0 auto;transition:.25s}
+  .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .hamburger.open span:nth-child(2){opacity:0}
+  .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  @media(max-width:880px){
+    .hamburger{display:flex}
+    .nav-links{position:absolute;top:100%;right:0;left:0;flex-direction:column;align-items:stretch;gap:0;background:rgba(10,14,26,.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding:8px 0;max-height:0;overflow:hidden;transition:max-height .3s ease;font-size:15px}
+    .nav-links.open{max-height:420px}
+    .nav-links a{padding:13px 28px}
+    .nav-links a:not(.nav-cta){border-bottom:1px solid rgba(255,255,255,.05)}
+    .nav-links .nav-cta{margin:10px 28px;text-align:center}
+  }
+
+  .phead{padding:72px 0 20px}
+  .eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-2);margin-bottom:20px;display:flex;align-items:center;gap:12px}
+  .eyebrow::before{content:"";width:34px;height:1px;background:var(--accent-2)}
+  h1{font-family:var(--display);font-weight:600;font-size:clamp(34px,5vw,56px);line-height:1.05;letter-spacing:-.02em;margin-bottom:22px}
+  h1 em{font-style:italic;color:var(--accent)}
+  .intro{font-size:18.5px;color:var(--mut);max-width:44em}
+
+  section{padding:42px 0 0}
+  .yeartag{font-family:var(--display);font-style:italic;font-size:38px;color:var(--accent);margin:38px 0 22px;display:flex;align-items:center;gap:18px}
+  .yeartag::after{content:"";flex:1;height:1px;background:var(--line)}
+
+  .timeline{position:relative;padding-left:30px}
+  .timeline::before{content:"";position:absolute;left:6px;top:6px;bottom:6px;width:2px;background:linear-gradient(180deg,var(--accent-2),rgba(95,208,197,.1))}
+  .item{position:relative;padding:0 0 26px 22px}
+  .item::before{content:"";position:absolute;left:-30px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--ink);border:2px solid var(--accent-2)}
+  .item.hl::before{background:var(--accent);border-color:var(--accent);box-shadow:0 0 12px rgba(233,185,73,.5)}
+  .item .date{font-family:var(--mono);font-size:12px;color:var(--accent-2);letter-spacing:.04em;margin-bottom:5px}
+  .item .body{font-size:15.5px;color:var(--paper-dim);line-height:1.6}
+  .item .body b{color:var(--paper);font-weight:600}
+  .item .body a{color:var(--accent-2);border-bottom:1px solid rgba(95,208,197,.4)}
+  .item .body a:hover{color:var(--accent)}
+  .tagpill{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:999px;margin-left:8px;vertical-align:middle}
+  .tagpill.pub{background:rgba(233,185,73,.18);color:var(--accent)}
+  .tagpill.join{background:rgba(95,208,197,.16);color:var(--accent-2)}
+  .tagpill.award{background:rgba(255,107,94,.16);color:var(--accent-3)}
+
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s cubic-bezier(.2,.7,.2,1),transform .6s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  footer{border-top:1px solid var(--line);padding:50px 0 60px;background:var(--ink-2);margin-top:70px}
+  .foot-in{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+  .addr{font-size:14px;color:var(--mut);line-height:1.7}
+  .addr b{color:var(--paper);font-family:var(--display);font-size:17px;font-weight:600}
+  .foot-links{display:flex;flex-direction:column;gap:9px;font-size:14px;color:var(--mut)}
+  .foot-links a:hover{color:var(--accent-2)}
+  .copy{font-family:var(--mono);font-size:11px;color:var(--mut);margin-top:34px;letter-spacing:.04em}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <a class="brand" href="index.html">
+      <svg class="glyph" viewBox="0 0 40 40" fill="none">
+        <circle cx="20" cy="20" r="18" stroke="#e9b949" stroke-width="1.5" opacity=".4"/>
+        <path d="M9 26 C9 16, 17 16, 17 22 C17 28, 25 28, 25 18 C25 12, 31 14, 31 14" stroke="#5fd0c5" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <circle cx="9" cy="26" r="2.6" fill="#e9b949"/><circle cx="31" cy="14" r="2.6" fill="#ff6b5e"/>
+      </svg>
+      <div><b>Kim Lab</b><span>3D Genome · Disease</span></div>
+    </a>
+    <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    <div class="nav-links">
+      <a href="research.html">Research</a>
+      <a href="members.html">Members</a>
+      <a href="pi.html">PI</a>
+      <a href="publications.html">Publications</a>
+      <a href="news.html" class="active">News</a>
+      <a href="photos.html">Photos</a>
+      <a class="nav-cta" href="index.html#join">Join us</a>
+    </div>
+  </div>
+</nav>
+
+<header class="phead">
+  <div class="wrap">
+    <div class="eyebrow">News &amp; milestones</div>
+    <h1>What's been <em>happening.</em></h1>
+    <p class="intro">Talks, new members, awards, and milestones since the lab opened in 2022.</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+
+    <!-- 2026 -->
+    <div class="yeartag reveal">2026</div>
+    <div class="timeline reveal">
+      <div class="item"><div class="date">May 15</div><div class="body">Prof. Kim gives a departmental seminar at the <b>Institute of Biotechnology, College of Life Sciences and Biotechnology, Korea University</b>.</div></div>
+      <div class="item hl"><div class="date">Mar 11</div><div class="body">Chankyu Lee officially joins through the <b>M.S./Ph.D. program</b>. Welcome! <span class="tagpill join">new member</span></div></div>
+      <div class="item hl"><div class="date">Feb 20</div><div class="body">Kyung-Hwan Lee is awarded his <b>Ph.D.</b> — the lab's first doctoral graduate. Congratulations, Dr. Lee! <span class="tagpill award">milestone</span></div></div>
+      <div class="item hl"><div class="date">Feb</div><div class="body">Kyung-Hwan Lee is awarded the <b>Physician-Scientist Award</b>, a postdoctoral fellowship. Congrats! <span class="tagpill award">milestone</span></div></div>
+      <div class="item hl"><div class="date">Jan</div><div class="body">Sohee Choi and Jung Yoon Jang pass their <b>thesis proposals</b>. Congrats to both! <span class="tagpill award">milestone</span></div></div>
+      <div class="item"><div class="date">Jan 05</div><div class="body">The WURF program begins — Seyeon Kim (Konyang Univ.), Junyoung Choi (Pusan National Univ.), Chaeyoung Kim (Duksung Women's Univ.), and Kyunghye Han (UNIST) join as <b>WURF interns</b>. Welcome all!</div></div>
+    </div>
+
+    <!-- 2025 -->
+    <div class="yeartag reveal">2025</div>
+    <div class="timeline reveal">
+      <div class="item"><div class="date">Nov 30</div><div class="body">Prof. Kim presents at the <b>Asian 3 Roundtable on Nucleic Acids (A3RONA)</b>, Sapporo, Japan.</div></div>
+      <div class="item hl"><div class="date">Nov 10–14</div><div class="body">The lab successfully organized and hosted <b>Frontiers in 3D Genomics</b>, an international symposium bringing together leading researchers in the field.</div></div>
+      <div class="item hl"><div class="date">Nov</div><div class="body">Kyung-Hwan Lee successfully <b>defends his Ph.D. thesis</b>. Congrats! <span class="tagpill award">milestone</span></div></div>
+      <div class="item"><div class="date">Oct 15</div><div class="body">Prof. Kim gives a departmental seminar at the <b>Department of Medicine, Sungkyunkwan University School of Medicine</b>.</div></div>
+      <div class="item hl"><div class="date">2025</div><div class="body">The lab's work on <b>recombinant antibodies from clonally expanded cancer-associated plasma cells</b> is published in <b><a href="https://doi.org/10.1007/s00262-025-04045-9" target="_blank" rel="noopener">Cancer Immunology, Immunotherapy</a></b> (Prof. Kim co-corresponding). Congratulations to the team on a fine collaborative study! <span class="tagpill pub">publication</span></div></div>
+      <div class="item hl"><div class="date">Sep 10</div><div class="body">The lab's work on <b>replication stress, nuclear hypertrophy &amp; chromatin topology in cancer</b> is published in <b><a href="https://doi.org/10.1073/pnas.2424709122" target="_blank" rel="noopener">PNAS</a></b> (Prof. Kim co-corresponding). Wonderful work by Sohee — congratulations on a paper in one of science's flagship journals! <span class="tagpill pub">publication</span></div></div>
+      <div class="item hl"><div class="date">Sep</div><div class="body">Dr. Dan Emerson joins the lab as a <b>computational consultant</b> (US-based). Welcome! <span class="tagpill join">new member</span></div></div>
+      <div class="item"><div class="date">Jun 30</div><div class="body">Myung Suh Cho (Yonsei Univ.) and Da Eun Jung (Chungnam Nat'l Univ.) join as <b>SURF interns</b>. Welcome!</div></div>
+      <div class="item"><div class="date">Jun 27</div><div class="body">Prof. Kim presents at the <b>Tumor Genomics Symposium</b>, The Genetic Society of Korea, Cheonan.</div></div>
+      <div class="item"><div class="date">Jun 26</div><div class="body">Prof. Kim introduces the lab at <b>BIONEXT 2025: A New Wave of Bioscience Led by Young Innovators</b>, Daegu.</div></div>
+      <div class="item"><div class="date">May 13</div><div class="body">Prof. Kim presents at the Department of Molecular Medicine, <b>Hanyang University ERICA</b>, Ansan.</div></div>
+      <div class="item"><div class="date">May 06</div><div class="body">Prof. Kim presents and meets the Precision Medicine team at <b>GlaxoSmithKline</b> (USA), with strong interest from the team and its leadership.</div></div>
+      <div class="item hl"><div class="date">Apr 03</div><div class="body">Eunhye Jeung officially joins through the <b>M.S./Ph.D. program</b> — studying the 3D genome in cancer. Welcome! <span class="tagpill join">new member</span></div></div>
+      <div class="item"><div class="date">Mar 13</div><div class="body">Prof. Kim presents at the Department of Biological Science, <b>Sungkyunkwan University</b>, Suwon.</div></div>
+      <div class="item"><div class="date">Feb 21</div><div class="body">Jee Yin Kim, extended WURF intern, presents her work on epigenetic data analysis. Well done — best wishes for your future career!</div></div>
+      <div class="item"><div class="date">Feb 05–07</div><div class="body">The lab attends the <b>21st KOGO Winter Symposium</b>, Hongcheon, and discusses future directions.</div></div>
+      <div class="item"><div class="date">Feb 03–04</div><div class="body">The lab relocates to the <b>Munji campus</b>, part of a departmental initiative to consolidate on a single site.</div></div>
+      <div class="item"><div class="date">Jan 22</div><div class="body">Prof. Kim meets SURF students and introduces the research on 3D genome folding.</div></div>
+      <div class="item"><div class="date">Jan 15</div><div class="body">Prof. Kim presents at the Symposium for Scientific Analysis Technologies and Cutting-edge Bio, Daejeon. WURF interns join too.</div></div>
+      <div class="item"><div class="date">Jan 07</div><div class="body">Yoon Jin Cho (Yonsei), Jee Yin Kim (Sookmyung), and Jeong Jin Shin (Korea Univ.) join as <b>WURF interns</b>. Welcome all.</div></div>
+      <div class="item"><div class="date">Jan 06</div><div class="body">Prof. Kim presents at the <b>KSMCB Winter Symposium</b>, Yongpyong.</div></div>
+    </div>
+
+    <!-- 2024 -->
+    <div class="yeartag reveal">2024</div>
+    <div class="timeline reveal">
+      <div class="item hl"><div class="date">Dec 10–13</div><div class="body">Prof. Kim meets <b>Prof. Jennifer Phillips-Cremins</b> and other 3D-genome leaders at the 4D Nucleome consortium sunset meeting — the first since the lab opened.</div></div>
+      <div class="item"><div class="date">Nov 01</div><div class="body">Prof. Kim presents at <b>Asian 3 Roundtable on Nucleic Acids (A3RONA)</b>, Busan.</div></div>
+      <div class="item"><div class="date">Aug 01</div><div class="body">Prof. Kim presents at the Annual Conference of the <b>Korean Association of Biological Sciences</b>, Jeju.</div></div>
+      <div class="item"><div class="date">Jul 01</div><div class="body">Hyung Min Lee joins through the <b>SURF program</b>. Welcome!</div></div>
+      <div class="item"><div class="date">Jun 28</div><div class="body">Prof. Kim presents at the <b>KSMCB Cell Cycle Symposium</b>, Siheung.</div></div>
+      <div class="item"><div class="date">Jun 27</div><div class="body">Prof. Kim presents at the <b>Basic Medical Research Conference</b>, Seoul.</div></div>
+      <div class="item"><div class="date">Jun 16</div><div class="body">Jae Lim Oh joins as administrative support. Welcome!</div></div>
+      <div class="item hl"><div class="date">Jun 16–18</div><div class="body">Kyung-Hwan Lee and Soo Hyeon Ma present posters at the <b>2024 K4DN Symposium</b>, Busan — the lab's first student poster presentation. Congrats!</div></div>
+      <div class="item"><div class="date">Jun 03</div><div class="body">Prof. Kim's discussion on <a href="https://www.ksmcb.or.kr/board/list.html?code=bbs11" target="_blank" rel="noopener">3D epigenomics and its impact on disease mechanisms</a> is published in the KSMCB Webzine. <span class="tagpill pub">publication</span></div></div>
+      <div class="item hl"><div class="date">May 30</div><div class="body">The <a href="https://pubmed.ncbi.nlm.nih.gov/38627948/" target="_blank" rel="noopener">lab's first publication</a> appears in <b>BMB Reports</b>. Huge congratulations to Kyung-Hwan, the first author — a milestone for him and for the lab! <span class="tagpill pub">publication</span></div></div>
+      <div class="item"><div class="date">May 09</div><div class="body">Prof. Kim presents at the Department of Systems Biology, <b>Yonsei University</b>.</div></div>
+      <div class="item"><div class="date">Apr 24</div><div class="body">Prof. Kim hosts <b>Dr. Thomas Gilgenast</b> at KAIST, who advises members on data analysis and careers.</div></div>
+      <div class="item hl"><div class="date">Apr 24</div><div class="body">Prof. Kim is selected for the <b>Young Outstanding Investigator Award</b> from the National Research Foundation. <span class="tagpill award">award</span></div></div>
+      <div class="item"><div class="date">Apr 12</div><div class="body">Prof. Kim presents at the Department of Biological Sciences, <b>Seoul National University</b>.</div></div>
+      <div class="item hl"><div class="date">Mar 20</div><div class="body">Jung Yoon Jang officially joins through the <b>M.S./Ph.D. program</b>. Welcome! <span class="tagpill join">new member</span></div></div>
+      <div class="item"><div class="date">Mar 08</div><div class="body">The lab is selected for the <b>UP program</b>.</div></div>
+      <div class="item hl"><div class="date">Mar 07</div><div class="body">Sohee Choi officially joins through the <b>M.S./Ph.D. program</b>. Welcome! <span class="tagpill join">new member</span></div></div>
+      <div class="item hl"><div class="date">Feb 20</div><div class="body">Kyung-Hwan passes the <b>Ph.D. qualification</b> and thesis plan. Congrats!</div></div>
+      <div class="item"><div class="date">Jan 31–Feb 02</div><div class="body">Prof. Kim presents at the <b>KOGO Winter Symposium</b>, Hongcheon.</div></div>
+      <div class="item"><div class="date">Jan 16</div><div class="body">Sohee Choi joins as an intern. Welcome!</div></div>
+      <div class="item"><div class="date">Jan 10–12</div><div class="body">Prof. Kim presents at the <b>KSBMB Winter Symposium</b>, Hongcheon.</div></div>
+      <div class="item"><div class="date">Jan 02</div><div class="body">Yeji Han joins as an intern (Medical Student Research Program). Welcome!</div></div>
+    </div>
+
+    <!-- 2023 -->
+    <div class="yeartag reveal">2023</div>
+    <div class="timeline reveal">
+      <div class="item"><div class="date">Dec 18</div><div class="body">Prof. Kim presents at the Department of Biochemistry, <b>Yonsei University</b>.</div></div>
+      <div class="item"><div class="date">Dec 02–06</div><div class="body">Prof. Kim attends the <b>American Society for Cell Biology</b> meeting, Boston, USA.</div></div>
+      <div class="item"><div class="date">Nov 10–12</div><div class="body">Prof. Kim presents at <b>A3RONA</b>, Chengdu, China.</div></div>
+      <div class="item"><div class="date">Oct 17</div><div class="body">Prof. Kim presents at Interdisciplinary Bioscience and Bioengineering, <b>POSTECH</b>.</div></div>
+      <div class="item"><div class="date">Oct 11</div><div class="body">Prof. Kim presents at the <b>Merck–Korea workshop</b>, KAIST.</div></div>
+      <div class="item"><div class="date">Sep 06</div><div class="body">Prof. Kim presents at Biochemistry, College of Medicine, <b>Seoul National University</b>.</div></div>
+      <div class="item"><div class="date">Aug 30</div><div class="body">Prof. Kim presents at the School of Korean Medicine, <b>Pusan National University</b>.</div></div>
+      <div class="item"><div class="date">Aug 28</div><div class="body">Lab moves to the 6th floor, E7 BMRC.</div></div>
+      <div class="item"><div class="date">Aug 14–18</div><div class="body">Prof. Kim presents at <b>ICBP, IUPAP</b>, Seoul.</div></div>
+      <div class="item"><div class="date">Jul 10</div><div class="body">Jong Min Kim joins as a <b>SURF intern</b>. Welcome!</div></div>
+      <div class="item"><div class="date">May 02</div><div class="body">The lab is chosen for the <b>"Creative &amp; Challenging (C2) Research Lab"</b> program. <span class="tagpill award">award</span></div></div>
+      <div class="item hl"><div class="date">Mar 21–22</div><div class="body">Prof. Kim hosts <a href="https://youtu.be/qjfIe1BA3xs" target="_blank" rel="noopener">Prof. Bill Earnshaw's visit to KAIST</a>; the lab learns from him on succeeding in graduate research.</div></div>
+      <div class="item hl"><div class="date">Mar 17</div><div class="body">Jungyu Kim, M.D. and Kyung-Hwan Lee, M.D. join as <b>Ph.D. students</b>. Welcome! <span class="tagpill join">new member</span></div></div>
+      <div class="item"><div class="date">Feb 22–24</div><div class="body">Prof. Kim attends the <b>34th KSMCB Winter Conference</b>, Pyeongchang.</div></div>
+      <div class="item"><div class="date">Jan 19</div><div class="body">Prof. Kim attends the 19th meeting of the <b>Korea Genome Organization</b>, Hongcheon.</div></div>
+    </div>
+
+    <!-- 2022 -->
+    <div class="yeartag reveal">2022</div>
+    <div class="timeline reveal">
+      <div class="item"><div class="date">Dec 14–16</div><div class="body">Prof. Kim presents at the <b>KSMCB Epigenetics Symposium</b>.</div></div>
+      <div class="item"><div class="date">Dec 07</div><div class="body">The lab attends the <b>GSMSE Science Festival</b>, KAIST.</div></div>
+      <div class="item"><div class="date">Oct 12</div><div class="body">Prof. Kim presents at Chungnam National University Hospital Research Institute for Medical Science.</div></div>
+      <div class="item hl"><div class="date">Sep 05</div><div class="body">Soo Hyeon Ma joins through the <b>M.S./Ph.D. program</b>. Welcome! <span class="tagpill join">new member</span></div></div>
+      <div class="item hl"><div class="date">Sep 2022</div><div class="body">Prof. Kim starts his faculty position and <b>opens the Kim Lab</b> at GSMSE, KAIST. <span class="tagpill award">lab founded</span></div></div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-in">
+    <div class="addr">
+      <b>Kim Lab — 3D Genome and Disease Mechanisms</b><br><br>
+      Graduate School of Medical Science &amp; Engineering<br>
+      Korea Advanced Institute of Science and Technology (KAIST)<br>
+      Yuseong-gu, Daejeon 34141, Republic of Korea<br>
+      jihkim@kaist.ac.kr
+    </div>
+    <div class="foot-links">
+      <a href="index.html">Home</a>
+      <a href="research.html">Research</a>
+      <a href="members.html">Members</a>
+      <a href="publications.html">Publications</a>
+      <a href="index.html#join">Join us</a>
+    </div>
+  </div>
+  <div class="wrap"><div class="copy">© 2026 Kim Lab, KAIST · 3D Genome and Disease Mechanisms</div></div>
+</footer>
+
+<script>
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.08});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+<script>
+  (function(){
+    var h=document.querySelector('.hamburger'), n=document.querySelector('.nav-links');
+    if(h&&n){h.addEventListener('click',function(){h.classList.toggle('open');n.classList.toggle('open');});
+    n.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){h.classList.remove('open');n.classList.remove('open');});});}
+  })();
+</script>
+</body>
+</html>
