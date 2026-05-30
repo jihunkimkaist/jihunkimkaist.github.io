@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Photos — Kim Lab | 3D Genome and Disease Mechanisms, KAIST</title>
+<meta name="description" content="Life in the Kim Lab — conferences, lab events, and everyday science at KAIST.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600;6..72,700&family=Spline+Sans+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0a0e1a;--ink-2:#121829;--panel:#161d33;--panel-2:#1c2541;
+    --line:rgba(255,255,255,.10);--line-strong:rgba(255,255,255,.18);
+    --paper:#f4f1ea;--paper-dim:#cdc9bf;--mut:#8b93ab;
+    --accent:#e9b949;--accent-2:#5fd0c5;--accent-3:#ff6b5e;
+    --maxw:1080px;--display:'Newsreader',Georgia,serif;--body:'Manrope',system-ui,sans-serif;--mono:'Spline Sans Mono',monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--ink);color:var(--paper);font-family:var(--body);font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--accent);color:var(--ink)}
+  body::before{content:"";position:fixed;inset:0;background:radial-gradient(900px 600px at 80% -5%,rgba(95,208,197,.09),transparent 60%),radial-gradient(800px 700px at 5% 110%,rgba(233,185,73,.07),transparent 55%);pointer-events:none;z-index:0}
+  .wrap{position:relative;z-index:1;max-width:var(--maxw);margin:0 auto;padding:0 28px}
+
+  nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(10,14,26,.72);border-bottom:1px solid var(--line)}
+  .nav-in{position:relative;max-width:1180px;margin:0 auto;padding:14px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+  .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:-.01em}
+  .brand .glyph{width:30px;height:30px;flex:none}
+  .brand b{font-size:15.5px}
+  .brand span{display:block;font-family:var(--mono);font-size:10.5px;color:var(--accent-2);letter-spacing:.12em;text-transform:uppercase;font-weight:500}
+  .nav-links{display:flex;gap:24px;align-items:center;font-size:14px;color:var(--mut);font-weight:600}
+  .nav-links a{transition:color .2s}
+  .nav-links a:hover{color:var(--paper)}
+  .nav-links a.active{color:var(--paper)}
+  .nav-cta{font-weight:700;font-size:13.5px;color:var(--ink);background:var(--accent);padding:9px 18px;border-radius:999px;transition:transform .2s,box-shadow .2s}
+  .nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(233,185,73,.3)}
+  .hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;width:42px;height:42px;background:none;border:1px solid var(--line-strong);border-radius:10px;cursor:pointer;padding:0}
+  .hamburger span{display:block;width:18px;height:2px;background:var(--paper);margin:0 auto;transition:.25s}
+  .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .hamburger.open span:nth-child(2){opacity:0}
+  .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  @media(max-width:880px){
+    .hamburger{display:flex}
+    .nav-links{position:absolute;top:100%;right:0;left:0;flex-direction:column;align-items:stretch;gap:0;background:rgba(10,14,26,.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding:8px 0;max-height:0;overflow:hidden;transition:max-height .3s ease;font-size:15px}
+    .nav-links.open{max-height:420px}
+    .nav-links a{padding:13px 28px}
+    .nav-links a:not(.nav-cta){border-bottom:1px solid rgba(255,255,255,.05)}
+    .nav-links .nav-cta{margin:10px 28px;text-align:center}
+  }
+
+  .phead{padding:72px 0 20px}
+  .eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-2);margin-bottom:20px;display:flex;align-items:center;gap:12px}
+  .eyebrow::before{content:"";width:34px;height:1px;background:var(--accent-2)}
+  h1{font-family:var(--display);font-weight:600;font-size:clamp(34px,5vw,56px);line-height:1.05;letter-spacing:-.02em;margin-bottom:22px}
+  h1 em{font-style:italic;color:var(--accent)}
+  .intro{font-size:18.5px;color:var(--mut);max-width:44em}
+
+  .editnote{margin-top:26px;background:rgba(233,185,73,.08);border:1px solid rgba(233,185,73,.25);border-radius:12px;padding:16px 20px;font-family:var(--mono);font-size:12.5px;color:var(--paper-dim);line-height:1.6}
+  .editnote b{color:var(--accent)}
+
+  section{padding:46px 0 0}
+  .gallery{columns:3;column-gap:18px}
+  @media(max-width:820px){.gallery{columns:2}}
+  @media(max-width:520px){.gallery{columns:1}}
+  .shot{break-inside:avoid;margin-bottom:18px;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--panel);position:relative}
+  .shot .ph{width:100%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#1c2541,#0d1324);position:relative;overflow:hidden}
+  .shot .ph svg{width:46px;height:46px;opacity:.5}
+  .shot .ph::after{content:"";position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cpath d='M0 20 L40 20 M20 0 L20 40' stroke='%23ffffff' stroke-width='.5' opacity='.05'/%3E%3C/svg%3E")}
+  .shot .cap{padding:13px 16px;font-size:13.5px;color:var(--paper-dim);line-height:1.45}
+  .shot .cap .d{font-family:var(--mono);font-size:11px;color:var(--accent-2);display:block;margin-top:3px}
+  /* varying placeholder heights for a natural masonry look */
+  .h1{height:200px}.h2{height:260px}.h3{height:170px}.h4{height:230px}
+
+  div.shotimg{width:100%;display:block;cursor:pointer;background-size:cover;background-position:center;background-repeat:no-repeat;background-color:#0d1324}
+  .shot{cursor:pointer}
+  .shot .count-badge{position:absolute;top:10px;right:10px;font-family:var(--mono);font-size:11px;color:var(--paper);background:rgba(10,14,26,.75);border:1px solid var(--line-strong);border-radius:999px;padding:3px 9px;display:flex;align-items:center;gap:5px;backdrop-filter:blur(4px)}
+  .shot .count-badge svg{width:12px;height:12px}
+
+  /* lightbox */
+  .lightbox{position:fixed;inset:0;z-index:200;background:rgba(6,9,17,.94);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;opacity:0;transition:opacity .25s}
+  .lightbox.open{display:flex;opacity:1}
+  .lb-figure{margin:0;max-width:88vw;max-height:86vh;display:flex;flex-direction:column;align-items:center;gap:14px}
+  .lb-figure #lbImg{border-radius:10px;box-shadow:0 30px 80px rgba(0,0,0,.6);background-size:contain;background-position:center;background-repeat:no-repeat;background-color:#0a0e1a}
+  .lb-figure figcaption{font-family:var(--body);font-size:15px;color:var(--paper-dim);text-align:center}
+  .lb-close{position:absolute;top:22px;right:26px;background:none;border:none;color:var(--paper);font-size:38px;line-height:1;cursor:pointer;opacity:.7;transition:opacity .2s}
+  .lb-close:hover{opacity:1}
+  .lb-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(22,29,51,.7);border:1px solid var(--line-strong);color:var(--paper);width:52px;height:52px;border-radius:50%;font-size:28px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s,transform .2s}
+  .lb-nav:hover{background:var(--accent);color:var(--ink)}
+  .lb-prev{left:24px}.lb-next{right:24px}
+  .lb-counter{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);font-family:var(--mono);font-size:13px;color:var(--paper-dim);letter-spacing:.05em}
+  .lb-nav.hidden{display:none}
+  @media(max-width:600px){.lb-nav{width:42px;height:42px;font-size:22px}.lb-prev{left:8px}.lb-next{right:8px}}
+
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s cubic-bezier(.2,.7,.2,1),transform .6s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  footer{border-top:1px solid var(--line);padding:50px 0 60px;background:var(--ink-2);margin-top:70px}
+  .foot-in{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+  .addr{font-size:14px;color:var(--mut);line-height:1.7}
+  .addr b{color:var(--paper);font-family:var(--display);font-size:17px;font-weight:600}
+  .foot-links{display:flex;flex-direction:column;gap:9px;font-size:14px;color:var(--mut)}
+  .foot-links a:hover{color:var(--accent-2)}
+  .copy{font-family:var(--mono);font-size:11px;color:var(--mut);margin-top:34px;letter-spacing:.04em}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <a class="brand" href="index.html">
+      <svg class="glyph" viewBox="0 0 40 40" fill="none"><title>Kim Lab</title><desc>Kim Lab, KAIST — jihunkim.kaist.ac.kr</desc><!--Kim Lab, KAIST, jihunkim.kaist.ac.kr-->
+        <circle cx="20" cy="20" r="18" stroke="#e9b949" stroke-width="1.5" opacity=".4"/>
+        <path d="M9 26 C9 16, 17 16, 17 22 C17 28, 25 28, 25 18 C25 12, 31 14, 31 14" stroke="#5fd0c5" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <circle cx="9" cy="26" r="2.6" fill="#e9b949"/><circle cx="31" cy="14" r="2.6" fill="#ff6b5e"/>
+      </svg>
+      <div><b>Kim Lab</b><span>3D Genome · Disease</span></div>
+    </a>
+    <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    <div class="nav-links">
+      <a href="research.html">Research</a>
+      <a href="members.html">Members</a>
+      <a href="pi.html">PI</a>
+      <a href="publications.html">Publications</a>
+      <a href="news.html">News</a>
+      <a href="photos.html" class="active">Photos</a>
+      <a class="nav-cta" href="index.html#join">Join us</a>
+    </div>
+  </div>
+</nav>
+
+<header class="phead">
+  <div class="wrap">
+    <div class="eyebrow">Gallery</div>
+    <h1>Life in <em>the lab.</em></h1>
+    <p class="intro">Conferences, visitors, lab dinners, and the everyday work of doing science together.</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap reveal">
+    <div class="gallery" id="gallery">
+      <div class="shot" data-base="seoul-hospital-meeting-2026" data-count="3" data-ext="jpeg" data-caption="Meeting with collaborators, Samsung Medical Center" data-year="2026"></div>
+      <div class="shot" data-base="teachers-day-2025" data-count="2" data-ext="jpg" data-caption="Teachers' Day" data-year="2025"></div>
+      <div class="shot" data-base="kyunghwan-defense-2025" data-count="1" data-ext="jpg" data-caption="Kyung-Hwan's Ph.D. defense" data-year="2025"></div>
+      <div class="shot" data-base="departmental-workshop-2025" data-count="2" data-ext="jpg" data-caption="Departmental workshop" data-year="2025"></div>
+      <div class="shot" data-base="kyunghwan-bday-2025" data-count="8" data-ext="jpeg" data-caption="Kyung-Hwan's birthday" data-year="2025"></div>
+      <div class="shot" data-base="ksmcb-winter-2025" data-count="2" data-ext="jpg" data-caption="KSMCB Winter Symposium" data-year="2025"></div>
+      <div class="shot" data-base="kogo-winter-2025" data-count="2" data-ext="jpeg" data-caption="KOGO Winter Symposium" data-year="2025"></div>
+      <div class="shot" data-base="sohee-bday-2025" data-count="1" data-ext="jpeg" data-caption="Sohee's birthday" data-year="2025"></div>
+      <div class="shot" data-base="meeting-with-dan-2025" data-count="2" data-ext="jpeg" data-caption="Meeting with Dan" data-year="2025"></div>
+      <div class="shot" data-base="beautiful-campus-2025" data-count="5" data-ext="jpeg" data-caption="Our beautiful campus" data-year="2025"></div>
+      <div class="shot" data-base="wurf-party-2025" data-count="2" data-ext="jpeg" data-caption="Small party with WURF students" data-year="2025"></div>
+      <div class="shot" data-base="jungyoon-bday-2025" data-count="3" data-ext="jpeg" data-caption="Jung Yoon's birthday party" data-year="2025"></div>
+      <div class="shot" data-base="lab-dinner-2024" data-count="4" data-ext="jpg" data-caption="Lab dinner" data-year="2024"></div>
+      <div class="shot" data-base="departmental-workshop-2024" data-count="6" data-ext="jpg" data-caption="Departmental workshop" data-year="2024"></div>
+      <div class="shot" data-base="gilgenast-visit-2024" data-count="4" data-ext="jpeg" data-caption="Meeting with Dr. Gilgenast" data-year="2024"></div>
+      <div class="shot" data-base="earnshaw-symposium-2023" data-count="6" data-ext="JPG" data-caption="Symposium with Prof. Bill Earnshaw" data-year="2023"></div>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lb-close" id="lbClose" aria-label="Close">&times;</button>
+  <button class="lb-nav lb-prev" id="lbPrev" aria-label="Previous">&#8249;</button>
+  <figure class="lb-figure">
+    <div id="lbImg" role="img"></div>
+    <figcaption id="lbCap"></figcaption>
+  </figure>
+  <button class="lb-nav lb-next" id="lbNext" aria-label="Next">&#8250;</button>
+  <div class="lb-counter" id="lbCounter"></div>
+</div>
+
+<footer>
+  <div class="wrap foot-in">
+    <div class="addr">
+      <b>Kim Lab — 3D Genome and Disease Mechanisms</b><br><br>
+      Graduate School of Medical Science &amp; Engineering<br>
+      Korea Advanced Institute of Science and Technology (KAIST)<br>
+      Yuseong-gu, Daejeon 34051, Republic of Korea<br>
+      jihkim@kaist.ac.kr
+    </div>
+    <div class="foot-links">
+      <a href="index.html">Home</a>
+      <a href="research.html">Research</a>
+      <a href="members.html">Members</a>
+      <a href="publications.html">Publications</a>
+      <a href="news.html">News</a>
+    </div>
+  </div>
+  <div class="wrap"><div class="copy">© 2026 Kim Lab, KAIST · 3D Genome and Disease Mechanisms</div></div>
+</footer>
+
+<script>
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.08});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // ---- Build gallery frames from data attributes ----
+  const heights = ['h2','h1','h3','h4'];      // varied placeholder heights for masonry
+  const strokes = ['#5fd0c5','#e9b949','#ff6b5e'];
+  const phSvg = (c)=>`<div class="ph ${heights[Math.floor(Math.random()*4)]}" style="display:none"><svg viewBox="0 0 48 48" fill="none"><title>Kim Lab</title><desc>Kim Lab, KAIST — jihunkim.kaist.ac.kr</desc><!--Kim Lab, KAIST, jihunkim.kaist.ac.kr--><rect x="6" y="12" width="36" height="26" rx="3" stroke="${c}" stroke-width="2"/><circle cx="24" cy="25" r="7" stroke="${c}" stroke-width="2"/><rect x="18" y="8" width="12" height="5" rx="2" fill="${c}"/></svg></div>`;
+
+  const shots = [...document.querySelectorAll('#gallery .shot')];
+  shots.forEach((shot,i)=>{
+    const base = shot.dataset.base;
+    const count = parseInt(shot.dataset.count||'1',10);
+    const ext = shot.dataset.ext||'jpg';
+    const cap = shot.dataset.caption||'';
+    const yr = shot.dataset.year||'';
+    const stroke = strokes[i%3];
+    const cover = `photos/${base}-1.${ext}`;
+    // cover via background-image (blocks right-click "save image as")
+    const hClass = heights[Math.floor(Math.random()*4)];
+    let html = `<div class="shotimg ${hClass}" style="background-image:url('${cover}')"></div>${phSvg(stroke)}`;
+    // multi-photo badge
+    if(count>1){
+      html += `<span class="count-badge"><svg viewBox="0 0 24 24" fill="none"><title>Kim Lab</title><desc>Kim Lab, KAIST — jihunkim.kaist.ac.kr</desc><!--Kim Lab, KAIST, jihunkim.kaist.ac.kr--><rect x="3" y="3" width="14" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/><rect x="7" y="7" width="14" height="14" rx="2" fill="#0a0e1a" stroke="currentColor" stroke-width="1.6"/></svg>${count}</span>`;
+    }
+    html += `<div class="cap">${cap}<span class="d">${yr}</span></div>`;
+    shot.innerHTML = html;
+    // fallback: if cover image fails to load, hide bg div and show placeholder
+    const testImg = new Image();
+    testImg.onerror = ()=>{
+      const bg = shot.querySelector('.shotimg');
+      const ph = shot.querySelector('.ph');
+      if(bg) bg.style.display='none';
+      if(ph) ph.style.display='flex';
+    };
+    testImg.src = cover;
+  });
+
+  // ---- Lightbox ----
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lbImg');
+  const lbCap = document.getElementById('lbCap');
+  const lbCounter = document.getElementById('lbCounter');
+  const lbPrev = document.getElementById('lbPrev');
+  const lbNext = document.getElementById('lbNext');
+  let cur = {base:'',count:1,ext:'jpg',cap:'',idx:1};
+
+  function showImg(){
+    const url = `photos/${cur.base}-${cur.idx}.${cur.ext}`;
+    // Preload to get natural dimensions, then size the div to fit viewport while preserving aspect
+    const probe = new Image();
+    probe.onload = function(){
+      const maxW = window.innerWidth * 0.88;
+      const maxH = window.innerHeight * 0.78;
+      const ratio = probe.naturalWidth / probe.naturalHeight;
+      let w = maxW, h = maxW / ratio;
+      if(h > maxH){ h = maxH; w = maxH * ratio; }
+      lbImg.style.width = w + 'px';
+      lbImg.style.height = h + 'px';
+      lbImg.style.backgroundImage = `url('${url}')`;
+    };
+    probe.onerror = function(){
+      // fallback: show a neutral box at default size
+      lbImg.style.width = '60vw';
+      lbImg.style.height = '40vh';
+      lbImg.style.backgroundImage = '';
+    };
+    probe.src = url;
+    lbImg.setAttribute('aria-label', cur.cap);
+    lbCap.textContent = cur.cap;
+    lbCounter.textContent = cur.count>1 ? `${cur.idx} / ${cur.count}` : '';
+    const multi = cur.count>1;
+    lbPrev.classList.toggle('hidden',!multi);
+    lbNext.classList.toggle('hidden',!multi);
+  }
+  function openLb(shot){
+    cur = {base:shot.dataset.base, count:parseInt(shot.dataset.count||'1',10), ext:shot.dataset.ext||'jpg', cap:shot.dataset.caption||'', idx:1};
+    showImg();
+    lb.classList.add('open'); lb.setAttribute('aria-hidden','false');
+    document.body.style.overflow='hidden';
+  }
+  function closeLb(){ lb.classList.remove('open'); lb.setAttribute('aria-hidden','true'); document.body.style.overflow=''; }
+  function step(d){ cur.idx = ((cur.idx-1+d+cur.count)%cur.count)+1; showImg(); }
+
+  shots.forEach(shot=>shot.addEventListener('click',()=>openLb(shot)));
+  document.getElementById('lbClose').addEventListener('click',closeLb);
+  lbPrev.addEventListener('click',e=>{e.stopPropagation();step(-1);});
+  lbNext.addEventListener('click',e=>{e.stopPropagation();step(1);});
+  lb.addEventListener('click',e=>{ if(e.target===lb) closeLb(); });
+  document.addEventListener('keydown',e=>{
+    if(!lb.classList.contains('open')) return;
+    if(e.key==='Escape') closeLb();
+    else if(e.key==='ArrowLeft' && cur.count>1) step(-1);
+    else if(e.key==='ArrowRight' && cur.count>1) step(1);
+  });
+  window.addEventListener('resize', ()=>{ if(lb.classList.contains('open')) showImg(); });
+</script>
+<script>
+  (function(){
+    var h=document.querySelector('.hamburger'), n=document.querySelector('.nav-links');
+    if(h&&n){h.addEventListener('click',function(){h.classList.toggle('open');n.classList.toggle('open');});
+    n.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){h.classList.remove('open');n.classList.remove('open');});});}
+  })();
+</script>
+<script>
+  // Full-page right-click block, drag block, and Cmd+S / Ctrl+S block
+  // Note: text can still be copied via Cmd+C after selection
+  (function(){
+    document.addEventListener('contextmenu', function(e){ e.preventDefault(); });
+    document.addEventListener('dragstart', function(e){
+      const t = e.target;
+      if(t && (t.tagName === 'IMG' || t.tagName === 'svg' || t.closest('svg'))){
+        e.preventDefault();
+      }
+    });
+    document.addEventListener('keydown', function(e){
+      // Block Cmd+S (Mac) and Ctrl+S (Win/Linux) — page save
+      if((e.metaKey || e.ctrlKey) && (e.key === 's' || e.key === 'S')){
+        e.preventDefault();
+      }
+    });
+  })();
+</script>
+</body>
+</html>
