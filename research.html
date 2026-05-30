@@ -114,6 +114,12 @@
   .addr b{color:var(--paper);font-family:var(--display);font-size:17px;font-weight:600}
   .foot-links{display:flex;flex-direction:column;gap:9px;font-size:14px;color:var(--mut)}
   .foot-links a:hover{color:var(--accent-2)}
+  /* Grouped footer links (curated by page context) */
+  .foot-groups{display:flex;gap:48px;flex-wrap:wrap}
+  .foot-group{display:flex;flex-direction:column;gap:9px;font-size:14px;color:var(--mut)}
+  .foot-group .label{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:4px}
+  .foot-group a{color:var(--mut);text-decoration:none;transition:color .2s}
+  .foot-group a:hover{color:var(--accent-2)}
   .copy{font-family:var(--mono);font-size:11px;color:var(--mut);margin-top:34px;letter-spacing:.04em}
   @keyframes dash{to{stroke-dashoffset:-400}}
   .dashflow{stroke-dasharray:5 9;animation:dash 22s linear infinite}
@@ -344,11 +350,18 @@
       Yuseong-gu, Daejeon 34051, Republic of Korea<br>
       jihkim@kaist.ac.kr
     </div>
-    <div class="foot-links">
-      <a href="index.html">Home</a>
-      <a href="index.html#idea">The big idea</a>
-      <a href="pi.html">Principal investigator</a>
-      <a href="index.html#join">Join us</a>
+    <div class="foot-groups">
+      <div class="foot-group">
+        <span class="label">What drives us</span>
+        <a href="index.html#idea">The big idea</a>
+        <a href="pi.html">Principal investigator</a>
+      </div>
+      <div class="foot-group">
+        <span class="label">See the lab</span>
+        <a href="members.html">Members</a>
+        <a href="photos.html">Photos</a>
+        <a href="news.html">News</a>
+      </div>
     </div>
   </div>
   <div class="wrap"><div class="copy">© 2026 Kim Lab, KAIST · 3D Genome and Disease Mechanisms</div></div>
