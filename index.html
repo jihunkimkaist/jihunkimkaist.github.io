@@ -287,6 +287,17 @@
   .foot-group a{color:var(--mut);text-decoration:none;transition:color .2s}
   .foot-group a:hover{color:var(--accent-2)}
   .copy{font-family:var(--mono);font-size:11px;color:var(--mut);margin-top:34px;letter-spacing:.04em}
+  /* Lab intro video facade */
+  .video-wrap{max-width:900px;margin:0 auto;position:relative;border-radius:16px;overflow:hidden;background:#0d1324;aspect-ratio:16/9;cursor:pointer;border:1px solid var(--line);transition:border-color .3s,transform .3s}
+  .video-wrap:hover{border-color:var(--line-strong);transform:translateY(-2px)}
+  .video-wrap:hover .v-thumb{transform:scale(1.03)}
+  .v-thumb{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .5s}
+  .v-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,14,26,.1) 0%,rgba(10,14,26,.55) 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px}
+  .v-play{width:78px;height:78px;border-radius:50%;background:rgba(233,185,73,.94);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 32px rgba(0,0,0,.4);transition:transform .25s}
+  .video-wrap:hover .v-play{transform:scale(1.06)}
+  .v-play::after{content:"";border-style:solid;border-width:14px 0 14px 22px;border-color:transparent transparent transparent #0a0e1a;margin-left:5px}
+  .v-label{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.6)}
+  .video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 </style>
 </head>
 <body>
@@ -627,6 +638,22 @@
   </div>
 </section>
 
+<!-- Lab intro video -->
+<section id="intro-video">
+  <div class="wrap reveal">
+    <div class="sec-tag">Lab introduction</div>
+    <h2 style="margin-bottom:14px;max-width:780px">Hear it directly — <em>a short tour</em> of what we study.</h2>
+    <p class="lead-2" style="font-size:16px;max-width:720px;margin-bottom:30px;color:var(--mut)">A 6-minute walkthrough of the lab's core ideas — how 3D genome folding shapes gene expression, how it goes wrong in disease, and what we're building to read and rewrite it.</p>
+    <div class="video-wrap" id="introVid" data-vid="r4QqrVVDi9s">
+      <div class="v-thumb" style="background-image:url('https://i.ytimg.com/vi/r4QqrVVDi9s/maxresdefault.jpg')"></div>
+      <div class="v-overlay">
+        <div class="v-play"></div>
+        <div class="v-label">Play · 6 min · Korean with subtitles</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- PI -->
 <section class="pi" id="pi">
   <div class="wrap pi-in">
@@ -677,7 +704,7 @@
       <div class="tcard">
         <div class="tnum">03</div>
         <h3>You'll train at world level, in Korea</h3>
-        <p>The PI brings the playbook from Melbourne, Charles Lee's lab at the Jackson Laboratory, and Jennifer Phillips-Cremins' lab at Penn — to a lab embedded in KAIST's medical-science ecosystem, beside the Daedeok research cluster.</p>
+        <p>The PI brings the playbook from Melbourne, Charles Lee's lab at the Jackson Laboratory, and Jennifer Phillips-Cremins' lab at Penn — to a lab embedded in KAIST's medical-science ecosystem.</p>
       </div>
       <div class="tcard">
         <div class="tnum">04</div>
@@ -754,6 +781,17 @@
     var h=document.querySelector('.hamburger'), n=document.querySelector('.nav-links');
     if(h&&n){h.addEventListener('click',function(){h.classList.toggle('open');n.classList.toggle('open');});
     n.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){h.classList.remove('open');n.classList.remove('open');});});}
+  })();
+</script>
+<script>
+  (function(){
+    var v=document.getElementById('introVid');
+    if(!v) return;
+    v.addEventListener('click',function(){
+      var id=v.getAttribute('data-vid');
+      v.innerHTML='<iframe src="https://www.youtube.com/embed/'+id+'?autoplay=1&rel=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+      v.style.cursor='default';
+    });
   })();
 </script>
 <script>
