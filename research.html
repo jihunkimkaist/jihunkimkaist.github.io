@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Research — Kim Lab · 김지훈 연구실 연구분야 (3차원 유전체, 질환 기전) | KAIST</title>
-<meta name="description" content="카이스트 김지훈 교수 연구실의 연구분야입니다. 암에서의 3차원 유전체 접힘, DNA 손상·복구, 유전체 구조 엔지니어링을 연구합니다. In-depth look at the Kim Lab's research: 3D genome folding in cancer, DNA damage and repair, and engineering genome architecture.">
+<meta name="description" content="카이스트 김지훈 교수 연구실의 연구분야입니다. 암에서의 3차원 유전체 접힘, DNA 손상·복구, 유전체 구조 엔지니어링, 그리고 척수소뇌실조증·근긴장성이영양증 등 반복서열 확장 희귀질환을 연구합니다. In-depth look at the Kim Lab's research: 3D genome folding in cancer, DNA damage and repair, rare diseases of repeat expansion (spinocerebellar ataxia, myotonic dystrophy), and engineering genome architecture.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600;6..72,700&family=Spline+Sans+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -86,6 +86,10 @@
   .tag{font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;padding:5px 11px;border-radius:999px;border:1px solid var(--line-strong);color:var(--paper-dim)}
   .tag.d{color:var(--accent-3);border-color:rgba(255,107,94,.4)}
   .tag.t{color:var(--accent-2);border-color:rgba(95,208,197,.4)}
+  /* disease focus strip under each project heading */
+  .dz{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:2px 0 -6px}
+  .dz-label{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-3);margin-right:2px}
+  .dz-item{font-size:12.5px;color:var(--paper-dim);background:rgba(255,107,94,.08);border:1px solid rgba(255,107,94,.22);border-radius:999px;padding:4px 11px}
   .pjwrap{border:1px solid var(--line);border-radius:20px;padding:40px 44px;background:linear-gradient(180deg,var(--panel),rgba(22,29,51,.4))}
   @media(max-width:680px){.pjwrap{padding:30px 24px}}
   .pjbody{display:grid;grid-template-columns:1.25fr .9fr;gap:38px;align-items:center;margin-top:8px}
@@ -157,7 +161,7 @@
     <a class="back" href="index.html">← &nbsp;Back to home</a>
     <div class="eyebrow">Research · in depth</div>
     <h1>How the genome's <em>shape</em> writes the rules of health and disease.</h1>
-    <p class="intro">Our lab asks a deceptively simple question: <b>why does the same genome behave so differently from one cell to the next?</b> The answer lies partly in three dimensions — in how DNA is folded. Below is the longer story, and the three directions we are pursuing.</p>
+    <p class="intro">Our lab asks a deceptively simple question: <b>why does the same genome behave so differently from one cell to the next?</b> The answer lies partly in three dimensions — in how DNA is folded. Below is the longer story, and the four directions we are pursuing.</p>
   </div>
 </header>
 
@@ -197,6 +201,7 @@
   <div class="wrap reveal">
     <div class="pjwrap">
       <div class="proj-head"><div class="pno">01</div><div class="ptag">Cancer · genome instability</div></div>
+      <div class="dz"><span class="dz-label">Diseases in focus</span><span class="dz-item">solid tumors with structural variants</span><span class="dz-item">leukemia</span><span class="dz-item">copy-number–driven cancers</span></div>
       <h2 class="pj">Unstable genomes in cancer, read in 3D</h2>
       <div class="pjbody">
         <div class="pjtext">
@@ -244,6 +249,7 @@
   <div class="wrap reveal">
     <div class="pjwrap">
       <div class="proj-head"><div class="pno">02</div><div class="ptag">Cancer · genome stability</div></div>
+      <div class="dz"><span class="dz-label">Diseases in focus</span><span class="dz-item">DNA-repair–deficient cancers</span><span class="dz-item">replication-stress tumors</span><span class="dz-item">genome-instability syndromes</span></div>
       <h2 class="pj">DNA damage, repair, and the broken fold</h2>
       <div class="pjbody flip">
         <div class="pjtext">
@@ -285,9 +291,53 @@
 <section style="padding-top:0">
   <div class="wrap reveal">
     <div class="pjwrap">
-      <div class="proj-head"><div class="pno">03</div><div class="ptag">Technology · genome engineering</div></div>
-      <h2 class="pj">Learning to engineer 3D genome folding</h2>
+      <div class="proj-head"><div class="pno">03</div><div class="ptag">Rare disease · repeat expansion</div></div>
+      <div class="dz"><span class="dz-label">Diseases in focus</span><span class="dz-item">spinocerebellar ataxia</span><span class="dz-item">myotonic dystrophy</span><span class="dz-item">Friedreich&#39;s ataxia</span><span class="dz-item">other repeat-expansion disorders</span></div>
+      <h2 class="pj">Rare disease: when a repeat expansion refolds the genome</h2>
       <div class="pjbody">
+        <div class="pjtext">
+          <div class="qa"><div class="q">The problem</div><div class="a">In a family of rare disorders, a short stretch of DNA is repeated far too many times — the expansions behind the <b>spinocerebellar ataxias</b>, <b>myotonic dystrophy</b>, <b>Friedreich&#39;s ataxia</b> and related conditions. The expanded tract itself may be only a few kilobases, yet its consequences reach much further. The variants in our cancer work are acquired during life; these are inherited from birth — but both converge on the same readout, the shape of the genome.</div></div>
+          <div class="qa"><div class="q">The gap</div><div class="a">An expanded repeat can nucleate <b>repressive chromatin that spreads well beyond the repeat itself</b>, quieting genes that carry no mutation at all. Which structural features decide how far that silencing travels, why the fold collapses in this particular way, and how much of the clinical picture follows from it are all still open.</div></div>
+          <div class="qa"><div class="q">Our approach</div><div class="a">We map 3D folding in patient-derived and engineered models of repeat expansion, ask which structural changes actually cause the gene-expression defects, and test whether restoring the fold can restore function — the first step toward treating the mechanism rather than the symptom.</div></div>
+          <div class="tags"><span class="tag d">rare disease</span><span class="tag d">neurological</span><span class="tag">repeat expansion</span><span class="tag t">patient-derived models</span></div>
+        </div>
+        <div class="pjfig">
+          <svg viewBox="0 0 320 180" role="img" aria-label="A short repeat leaves a gene active; an expanded repeat sits in repressive chromatin and the gene falls silent"><title>Kim Lab</title><desc>Kim Lab, KAIST — jihunkim.kaist.ac.kr</desc><!--Kim Lab, KAIST, jihunkim.kaist.ac.kr-->
+            <!-- normal: short repeat, gene active -->
+            <text x="14" y="24" fill="#5fd0c5" font-family="&#39;Spline Sans Mono&#39;" font-size="10" letter-spacing=".5">SHORT REPEAT</text>
+            <path d="M18 52 H302" stroke="#5fd0c5" stroke-width="2.6" stroke-linecap="round" opacity=".85"/>
+            <g fill="#5fd0c5"><rect x="48" y="43" width="5" height="18" rx="2"/><rect x="59" y="43" width="5" height="18" rx="2"/><rect x="70" y="43" width="5" height="18" rx="2"/></g>
+            <polygon points="274,42 302,52 274,62" fill="#5fd0c5"/>
+            <text x="44" y="78" fill="#8b93ab" font-family="&#39;Spline Sans Mono&#39;" font-size="8.5">repeat</text>
+            <text x="248" y="78" fill="#5fd0c5" font-family="&#39;Spline Sans Mono&#39;" font-size="9">gene ON</text>
+            <!-- expansion -->
+            <path d="M160 92 v12" stroke="#ff6b5e" stroke-width="2" stroke-linecap="round"/>
+            <path d="M153 100 l7 8 7 -8" fill="none" stroke="#ff6b5e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <text x="172" y="107" fill="#ff6b5e" font-family="&#39;Spline Sans Mono&#39;" font-size="9">expansion</text>
+            <!-- expanded: repressive chromatin, gene silent -->
+            <text x="14" y="130" fill="#ff6b5e" font-family="&#39;Spline Sans Mono&#39;" font-size="10" letter-spacing=".5">EXPANDED REPEAT</text>
+            <text x="246" y="130" fill="#ff6b5e" font-family="&#39;Spline Sans Mono&#39;" font-size="9">gene OFF</text>
+            <rect x="14" y="136" width="292" height="36" rx="7" fill="#ff6b5e" opacity=".12"/>
+            <rect x="14" y="136" width="292" height="36" rx="7" fill="none" stroke="rgba(255,107,94,.28)"/>
+            <path d="M20 158 H298" stroke="#8b93ab" stroke-width="2.6" stroke-linecap="round" opacity=".55"/>
+            <g fill="#ff6b5e"><rect x="46" y="149" width="5" height="18" rx="2"/><rect x="57" y="149" width="5" height="18" rx="2"/><rect x="68" y="149" width="5" height="18" rx="2"/><rect x="79" y="149" width="5" height="18" rx="2"/><rect x="90" y="149" width="5" height="18" rx="2"/><rect x="101" y="149" width="5" height="18" rx="2"/><rect x="112" y="149" width="5" height="18" rx="2"/><rect x="123" y="149" width="5" height="18" rx="2"/></g>
+            <polygon points="272,148 300,158 272,168" fill="#69708a"/>
+          </svg>
+          <div class="cap">The repeat is small; the repressive chromatin it nucleates is not — and it reaches genes that carry no mutation at all</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECT 4 -->
+<section style="padding-top:0">
+  <div class="wrap reveal">
+    <div class="pjwrap">
+      <div class="proj-head"><div class="pno">04</div><div class="ptag">Technology · genome engineering</div></div>
+      <div class="dz"><span class="dz-label">Where it applies</span><span class="dz-item">oncogene enhancer hijacking</span><span class="dz-item">repeat-expansion loci</span><span class="dz-item">silenced disease genes</span></div>
+      <h2 class="pj">Learning to engineer 3D genome folding</h2>
+      <div class="pjbody flip">
         <div class="pjtext">
           <div class="qa"><div class="q">The problem</div><div class="a">The 3D genome is organized hierarchically — <b>loops, TADs, compartments, chromosomes</b>. The loop-extrusion model explains how loops form, but the cause-and-effect between loops, transcription, and epigenetic features is still unresolved.</div></div>
           <div class="qa"><div class="q">The gap</div><div class="a">Even how the genome's domain structures form in the first place remains elusive — which makes it hard to prove what folding actually <b>does</b>.</div></div>
@@ -328,7 +378,8 @@
 <div class="primer" style="margin-top:0">
   <div class="wrap reveal">
     <h2>Why it <em>matters</em></h2>
-    <p style="max-width:48em">3D genome folding is woven into the mechanisms of <b>many diseases — cancer and leukemia, medulloblastoma, schizophrenia, fragile X syndrome</b>, immune dysregulation, and metabolic change — as well as fundamental biology like development. By understanding the rules of folding, and learning to rewrite them, we aim to turn a basic mechanism into a lever for health.</p>
+    <p style="max-width:48em">3D genome folding is woven into the mechanisms of <b>many diseases — cancer and leukemia, medulloblastoma, schizophrenia, repeat-expansion disorders</b>, immune dysregulation, and metabolic change — as well as fundamental biology like development. By understanding the rules of folding, and learning to rewrite them, we aim to turn a basic mechanism into a lever for health.</p>
+    <p style="max-width:48em;margin-top:16px;color:var(--mut)">That is why <b>genome engineering</b> sits alongside the disease work rather than after it. A fold you can rewrite on demand is a fold whose function you can prove — and a mechanism you can prove is one you can eventually treat.</p>
   </div>
 </div>
 
